@@ -1,7 +1,9 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#0f0f23,#1a1a2e,#16213e);
+  background:url("body{
+  font-family:Arial,sans-serif;
+  background:url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg") center/cover fixed no-repeat;
   color:#fff;
   min-height:100vh;
 }
