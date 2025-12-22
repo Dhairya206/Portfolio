@@ -1,9 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:Arial,sans-serif;
-  background:url("body{
-  font-family:Arial,sans-serif;
-  background:url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg") center/cover fixed no-repeat;
+  background:url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg") center center / cover fixed no-repeat;
   color:#fff;
   min-height:100vh;
 }
