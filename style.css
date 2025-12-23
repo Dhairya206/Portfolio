@@ -5,10 +5,10 @@
   box-sizing:border-box;
 }
 
-/* Dark gradient page background */
+/* Dark page background */
 body{
   font-family:Arial, sans-serif;
-  background:radial-gradient(circle at top, #020617, #000000 70%);
+  background:#020617;
   color:#e5e7eb;
 }
 
@@ -21,7 +21,7 @@ body{
   padding:20px;
 }
 
-/* CARD – ONLY your image + glass overlay */
+/* CARD with your image */
 .card{
   width:340px;
   border-radius:26px;
@@ -43,7 +43,7 @@ body{
   z-index:-2;
 }
 
-/* dark glass overlay so text is readable */
+/* dark glass overlay so text readable */
 .card::after{
   content:"";
   position:absolute;
@@ -54,7 +54,7 @@ body{
   z-index:-1;
 }
 
-/* content inside card */
+/* ensure all content is above overlays */
 .card > *{
   position:relative;
 }
