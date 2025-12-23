@@ -106,3 +106,85 @@ function update() {
 function onGameOver() {
   gameOver = true;
   if (hitSound) {
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
+}
+
+function drawPlayer() {
+  if (playerImg && playerImg.complete) {
+    ctx.drawImage(playerImg, player.x, player.y, player.width, player.height);
+  } else {
+    ctx.fillStyle = '#60a5fa';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+}
+
+function drawObstacles() {
+  obstacles.forEach(o => {
+    if (obstacleImg && obstacleImg.complete) {
+      ctx.drawImage(obstacleImg, o.x, o.y, o.width, o.height);
+    } else {
+      ctx.fillStyle = '#f97316';
+      ctx.fillRect(o.x, o.y, o.width, o.height);
+    }
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // ground line
+  ctx.strokeStyle = '#4b5563';
+  ctx.beginPath();
+  ctx.moveTo(0, groundY + player.height);
+  ctx.lineTo(canvas.width, groundY + player.height);
+  ctx.stroke();
+
+  // player & obstacles
+  drawPlayer();
+  drawObstacles();
+
+  if (gameOver) {
+    ctx.fillStyle = '#e5e7eb';
+    ctx.font = '22px Arial';
+    ctx.fillText('Game Over - tap or press SPACE to restart', 40, 150);
+  }
+}
+
+function loop() {
+  update();
+  draw();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+// ======= CONTROLS =======
+
+function handleJumpOrRestart() {
+  if (gameOver) {
+    resetGame();
+    return;
+  }
+  if (!player.jumping) {
+    player.vy = jumpForce;
+    player.jumping = true;
+    if (jumpSound) {
+      jumpSound.currentTime = 0;
+      jumpSound.play();
+    }
+  }
+}
+
+// Keyboard (PC)
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' || e.code === 'ArrowUp') {
+    handleJumpOrRestart();
+  }
+});
+
+// Touch (Android / mobile)
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  handleJumpOrRestart();
+});
