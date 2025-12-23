@@ -8,10 +8,10 @@ body{
   font-family:Arial, sans-serif;
   background:#020617;
   color:#e5e7eb;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:100vh;
 }
 
 #game-container{
@@ -31,6 +31,7 @@ body{
   background:#0b1220;
   border:2px solid #4b5563;
   border-radius:8px;
+  touch-action:none; /* prevents double-tap zoom on mobile */
 }
 
 .hint{
