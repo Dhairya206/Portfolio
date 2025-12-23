@@ -1,11 +1,18 @@
-*{margin:0;padding:0;box-sizing:border-box;}
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+/* Dark gradient page background */
 body{
   font-family:Arial, sans-serif;
-  background:#020617;
+  background:radial-gradient(circle at top, #1f2937, #020617 65%);
   color:#e5e7eb;
 }
 
+/* Center card */
 .container{
   min-height:100vh;
   display:flex;
@@ -14,18 +21,19 @@ body{
   padding:20px;
 }
 
-/* Card with your image and soft glass effect */
+/* Glassmorphism + subtle image texture in card */
 .card{
   width:340px;
   border-radius:26px;
   padding:26px 22px 28px;
   text-align:center;
   background:
-    linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.92)),
+    linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.92)),
     url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg")
     center center / cover no-repeat;
-  box-shadow:0 22px 45px rgba(0,0,0,0.55);
-  border:1px solid rgba(148,163,184,0.2);
+  box-shadow:0 22px 45px rgba(0,0,0,0.65);
+  border:1px solid rgba(148,163,184,0.25);
+  backdrop-filter:blur(16px);
 }
 
 /* Neon avatar ring */
@@ -79,7 +87,7 @@ body{
   width:42px;
   height:42px;
   border-radius:50%;
-  background:rgba(15,23,42,0.9);
+  background:rgba(15,23,42,0.96);
   display:flex;
   align-items:center;
   justify-content:center;
