@@ -5,7 +5,7 @@
   box-sizing:border-box;
 }
 
-/* Dark page background */
+/* Page background */
 body{
   font-family:Arial, sans-serif;
   background:#020617;
@@ -21,7 +21,7 @@ body{
   padding:20px;
 }
 
-/* CARD with your image */
+/* Card with background image */
 .card{
   width:340px;
   border-radius:26px;
@@ -33,7 +33,7 @@ body{
   border:1px solid rgba(148,163,184,0.25);
 }
 
-/* background image layer */
+/* Card background image layer */
 .card::before{
   content:"";
   position:absolute;
@@ -43,7 +43,7 @@ body{
   z-index:-2;
 }
 
-/* dark glass overlay so text readable */
+/* Dark glass overlay */
 .card::after{
   content:"";
   position:absolute;
@@ -54,36 +54,39 @@ body{
   z-index:-1;
 }
 
-/* ensure all content is above overlays */
+/* Ensure content is above overlays */
 .card > *{
   position:relative;
 }
 
-/* Neon avatar ring */
+/* Outer glowing ring (thinner by size difference) */
 .avatar-ring{
   width:120px;
   height:120px;
   border-radius:50%;
   margin:4px auto 16px;
   background:radial-gradient(circle at 50% 30%, #60a5fa, #1e293b 70%);
-  box-shadow:0 0 35px rgba(56,189,248,0.7);
+  box-shadow:0 0 25px rgba(56,189,248,0.7);
   display:flex;
   align-items:center;
   justify-content:center;
 }
+
+/* Inner circle holding the photo */
 .avatar-inner{
-  width:90px;
-  height:90px;
+  width:100px;   /* smaller than 120px → ring visible but thin */
+  height:100px;
   border-radius:50%;
-  border:2px solid rgba(148,163,184,0.6);
-  overflow:hidden;  /* important to clip image to circle */
+  border:2px solid rgba(148,163,184,0.85);
+  overflow:hidden;
+  background:#020617;
 }
 
-/* ADD THIS RIGHT AFTER */
+/* Profile image */
 .avatar-img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:cover;   /* fills circle nicely */
   display:block;
 }
 
@@ -112,7 +115,7 @@ body{
   display:flex;
   justify-content:center;
   gap:18px;
-  margin-top:4px;
+  margin-top:8px;
 }
 .social-links a{
   width:42px;
@@ -134,6 +137,7 @@ body{
   box-shadow:0 10px 24px rgba(37,99,235,0.7);
 }
 
+/* Mobile */
 @media(max-width:600px){
   .card{width:92vw;}
 }
