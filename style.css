@@ -8,7 +8,7 @@
 /* Dark gradient page background */
 body{
   font-family:Arial, sans-serif;
-  background:radial-gradient(circle at top, #1f2937, #020617 65%);
+  background:radial-gradient(circle at top, #020617, #000000 70%);
   color:#e5e7eb;
 }
 
@@ -21,19 +21,42 @@ body{
   padding:20px;
 }
 
-/* Glassmorphism + subtle image texture in card */
+/* CARD – ONLY your image + glass overlay */
 .card{
   width:340px;
   border-radius:26px;
   padding:26px 22px 28px;
   text-align:center;
-  background:
-    linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.92)),
-    url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg")
-    center center / cover no-repeat;
+  position:relative;
+  overflow:hidden;
   box-shadow:0 22px 45px rgba(0,0,0,0.65);
   border:1px solid rgba(148,163,184,0.25);
-  backdrop-filter:blur(16px);
+}
+
+/* background image layer */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg")
+             center center / cover no-repeat;
+  z-index:-2;
+}
+
+/* dark glass overlay so text is readable */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,
+             rgba(15,23,42,0.92),
+             rgba(15,23,42,0.92));
+  z-index:-1;
+}
+
+/* content inside card */
+.card > *{
+  position:relative;
 }
 
 /* Neon avatar ring */
