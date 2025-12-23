@@ -1,11 +1,100 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+}
+
+.container{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Card with your image and soft glass effect */
 .card{
-  width:320px;
-  border-radius:24px;
-  padding:30px 20px 26px;
+  width:340px;
+  border-radius:26px;
+  padding:26px 22px 28px;
   text-align:center;
   background:
+    linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.92)),
     url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg")
     center center / cover no-repeat;
-  box-shadow:0 18px 40px rgba(0,0,0,0.45);
-  border:none;
+  box-shadow:0 22px 45px rgba(0,0,0,0.55);
+  border:1px solid rgba(148,163,184,0.2);
+}
+
+/* Neon avatar ring */
+.avatar-ring{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin:4px auto 16px;
+  background:radial-gradient(circle at 50% 30%, #60a5fa, #1e293b 70%);
+  box-shadow:0 0 35px rgba(56,189,248,0.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.avatar-inner{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:2px solid rgba(148,163,184,0.6);
+  background:radial-gradient(circle at 30% 20%, #111827, #020617 70%);
+}
+
+/* Typography */
+.name{
+  font-size:1.9rem;
+  margin-bottom:6px;
+  background:linear-gradient(45deg,#60a5fa,#a855f7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.subtitle{
+  font-size:0.95rem;
+  letter-spacing:0.03em;
+  color:#cbd5f5;
+  margin-bottom:4px;
+}
+.location{
+  font-size:0.85rem;
+  color:#9ca3af;
+  margin-bottom:18px;
+}
+
+/* Social icons row */
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:4px;
+}
+.social-links a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(15,23,42,0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#60a5fa;
+  font-size:1.1rem;
+  box-shadow:0 6px 16px rgba(0,0,0,0.6);
+  transition:transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.social-links a:hover{
+  transform:translateY(-3px);
+  background:#60a5fa;
+  color:#020617;
+  box-shadow:0 10px 24px rgba(37,99,235,0.7);
+}
+
+@media(max-width:600px){
+  .card{width:92vw;}
 }
