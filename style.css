@@ -5,10 +5,10 @@
   box-sizing:border-box;
 }
 
-/* Page background (simple dark) */
+/* Page background (plain dark) */
 body{
   font-family:Arial, sans-serif;
-  background:#0b1120;
+  background:#020617;       /* page, not card */
   color:#fff;
 }
 
@@ -21,7 +21,7 @@ body{
   padding:20px;
 }
 
-/* MAIN CARD – uses your image */
+/* Card uses ONLY your image as background */
 .card{
   width:320px;
   border-radius:24px;
@@ -33,7 +33,7 @@ body{
   box-shadow:0 18px 40px rgba(0,0,0,0.45);
 }
 
-/* Top circle (avatar placeholder) */
+/* Top circle */
 .profile-img{
   width:120px;
   height:120px;
