@@ -8,13 +8,12 @@ body{
 }
 .container{max-width:800px;margin:0 auto;padding:20px;}
 .card{
-  background:rgba(15,23,42,0.85); /* dark glass so text is readable */
-  backdrop-filter:blur(12px);
+  background:url("https://img.sanishtech.com/u/a15c6a2012be8dd6fe6fac99b0b33859.jpg")
+             center center / cover no-repeat;
   border-radius:20px;
-  padding:40px;
+  padding:30px;
   text-align:center;
-  box-shadow:0 8px 32px rgba(0,0,0,0.5);
-  margin:40px 0;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
 }
 .profile-img{
   width:150px;height:150px;border-radius:50%;
