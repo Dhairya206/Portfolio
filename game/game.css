@@ -1,1 +1,40 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+body{
+  font-family:Arial, sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+#game-container{
+  text-align:center;
+}
+
+.title{
+  margin-bottom:8px;
+}
+
+#score{
+  margin-bottom:6px;
+  font-size:1rem;
+}
+
+#game{
+  background:#0b1220;
+  border:2px solid #4b5563;
+  border-radius:8px;
+}
+
+.hint{
+  margin-top:8px;
+  font-size:0.85rem;
+  color:#9ca3af;
+}
