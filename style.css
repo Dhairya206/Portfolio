@@ -76,7 +76,15 @@ body{
   height:90px;
   border-radius:50%;
   border:2px solid rgba(148,163,184,0.6);
-  background:radial-gradient(circle at 30% 20%, #111827, #020617 70%);
+  overflow:hidden;  /* important to clip image to circle */
+}
+
+/* ADD THIS RIGHT AFTER */
+.avatar-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 /* Typography */
